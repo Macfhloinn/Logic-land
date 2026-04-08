@@ -643,7 +643,14 @@ export default function App() {
                       </div>
                     </div>
                     <h3 className="text-2xl font-black text-[#2D3436] mb-3">{challenge.title}</h3>
-                    <p className="text-sm text-[#636E72] leading-relaxed font-bold opacity-80">{challenge.description}</p>
+                    <p className="text-sm text-[#636E72] leading-relaxed font-bold opacity-80 mb-4">{challenge.description}</p>
+                    
+                    {challenge.solution && (
+                      <div className="mt-auto pt-4 border-t-2 border-slate-100/50">
+                        <p className="text-[10px] font-black text-[#4ECDC4] uppercase tracking-widest mb-1">Sneak Peek Solution 💡</p>
+                        <p className="text-[10px] text-slate-400 font-bold line-clamp-1 italic">{challenge.solution}</p>
+                      </div>
+                    )}
                     
                     {/* Decorative background element */}
                     <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#4ECDC4]/5 rounded-full blur-3xl group-hover:bg-[#4ECDC4]/10 transition-all" />
@@ -708,6 +715,12 @@ export default function App() {
             <div>
               <h3 className="text-3xl font-black tracking-tight mb-1">YOU DID IT! 🎉</h3>
               <p className="text-lg font-bold text-[#B2BEC3]">Your circuit is working perfectly!</p>
+              <button 
+                onClick={() => setShowSolution(true)}
+                className="mt-2 text-xs font-black text-[#4ECDC4] uppercase tracking-widest hover:text-[#55E6C1] transition-colors"
+              >
+                See Official Solution 💡
+              </button>
             </div>
             <button 
               onClick={() => { setIsSuccess(false); setShowChallengeModal(true); }}
