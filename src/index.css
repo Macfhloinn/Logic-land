@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  @apply bg-[#FFF9E6] text-slate-900 font-sans antialiased overflow-hidden;
+}
+
+.circuit-grid {
+  background-image: radial-gradient(#FFD93D 2px, transparent 2px);
+  background-size: 30px 30px;
+}
+
+.gate-shadow {
+  box-shadow: 0 8px 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+.bubbly-button {
+  @apply transition-all active:scale-90 active:translate-y-1;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.animate-dash {
+  animation: dash 1s linear infinite;
+}
+
